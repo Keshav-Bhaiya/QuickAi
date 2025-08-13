@@ -45,17 +45,17 @@ const BlogTitles = () => {
 
    return (
     <div className='h-full overscroll-y-scroll p-6 flex items-start flex-wrap gap-4 
-    text-slate-700'>
+    text-slate-700 dark:text-dark-text-secondary bg-[#F4F7FB] dark:bg-dark-bg'>
       {/* left col */}
-      <form onSubmit={onSubmitHandler} className='w-full max-w-lg p-4 bg-white rounded-lg border border-gray-200' action="">
+      <form onSubmit={onSubmitHandler} className='w-full max-w-lg p-4 bg-white dark:bg-dark-card rounded-lg border border-gray-200 dark:border-dark-border' action="">
         <div className='flex items-center gap-3'>
           <Sparkles className='w-6 text-[#8E37EB]'/>
-           <h1 className='text-xl font-semibold'>AI Title Generator</h1>
+           <h1 className='text-xl font-semibold text-gray-900 dark:text-dark-text'>AI Title Generator</h1>
         </div>
-        <p className='mt-6 text-sm font-medium'>Keyword</p>
+        <p className='mt-6 text-sm font-medium text-gray-700 dark:text-dark-text-secondary'>Keyword</p>
 
-        <input value={input} onChange={(e)=>setInput(e.target.value)} placeholder='The future of artificial intelligence is...' required className='w-full p-2 px-3 mt-2 outline-none text-sm rounded-md border border-gray-300' type="text" />
-        <p className='mt-4 text-sm font-medium'>Category</p>
+        <input value={input} onChange={(e)=>setInput(e.target.value)} placeholder='The future of artificial intelligence is...' required className='w-full p-2 px-3 mt-2 outline-none text-sm rounded-md border border-gray-300 dark:border-dark-border bg-white dark:bg-dark-surface text-gray-900 dark:text-dark-text placeholder-gray-500 dark:placeholder-dark-text-muted' type="text" />
+        <p className='mt-4 text-sm font-medium text-gray-700 dark:text-dark-text-secondary'>Category</p>
 
         <div className='mt-3 flex gap-3 flex-wrap sm:max-w-9/11'>
           {blogCategories.map((item)=>(
@@ -65,7 +65,7 @@ const BlogTitles = () => {
               className={`text-xs px-4 py-1 border rounded-full cursor-pointer ${
                 selectedCategory === item
                   ? 'bg-purple-50 text-purple-700'
-                  : 'text-gray-500 border-gray-300'
+                  : 'text-gray-500 dark:text-dark-text-muted border-gray-300 dark:border-dark-border'
               }`}
             >
               {item}
@@ -83,10 +83,10 @@ const BlogTitles = () => {
       </form>
 
       {/* right col */}
-      <div className='w-full max-w-lg p-4 bg-white rounded-lg flex flex-col border border-gray-200 min-h-110 '> 
+      <div className='w-full max-w-lg p-4 bg-white dark:bg-dark-card rounded-lg flex flex-col border border-gray-200 dark:border-dark-border min-h-110 '> 
         <div className='flex items-center gap-3'>
           <Hash className='w-5 h-5 text-[#8E37EB]'/>
-          <h1 className='text-xl font-semibold'>Generated titles</h1>
+          <h1 className='text-xl font-semibold text-gray-900 dark:text-dark-text'>Generated titles</h1>
         </div>
         
         {
@@ -98,7 +98,7 @@ const BlogTitles = () => {
             </div>
         </div>
           ) : (
-            <div className='mt-3 h-full overflow-y-scroll tesm text-slate-600'>
+            <div className='mt-3 h-full overflow-y-scroll tesm text-slate-600 dark:text-dark-text-secondary'>
                         <div className='reset-tw'>
                           <Markdown>
                           {content}

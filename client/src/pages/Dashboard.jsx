@@ -36,14 +36,14 @@ const Dashboard = () => {
   },[])
 
   return (
-    <div className='h-full overscroll-y-scroll p-6'>
+    <div className='h-full overscroll-y-scroll p-6 bg-[#F4F7FB] dark:bg-dark-bg'>
       <div className='flex justify-start gap-4 flex-wrap'>
         {/* Total Creations Card */}
-        <div className='flex justify-between items-center w-72 p-4 px-6 bg-white
-        border border-gray-200 rounded-xl'>
-          <div className='text-slate-600'>
+        <div className='flex justify-between items-center w-72 p-4 px-6 bg-white dark:bg-dark-card
+        border border-gray-200 dark:border-dark-border rounded-xl'>
+          <div className='text-slate-600 dark:text-dark-text-secondary'>
             <p className='text-sm'>Total Creations</p>
-            <h2 className='text-xl font-semibold'>{creations.length}</h2>
+            <h2 className='text-xl font-semibold text-gray-900 dark:text-dark-text'>{creations.length}</h2>
           </div>
           <div className='w-10 h-10 rounded-lg bg-gradient-to-br from-[#3588F2] to-[#0BB807] text-white flex justify-center items-center'>
             <Sparkles className='w-5 text-white'/>
@@ -52,11 +52,11 @@ const Dashboard = () => {
 
         {/* Active Plan Card */}
 
-        <div className='flex justify-between items-center w-72 p-4 px-6 bg-white
-        border border-gray-200 rounded-xl'>
-          <div className='text-slate-600'>
+        <div className='flex justify-between items-center w-72 p-4 px-6 bg-white dark:bg-dark-card
+        border border-gray-200 dark:border-dark-border rounded-xl'>
+          <div className='text-slate-600 dark:text-dark-text-secondary'>
             <p className='text-sm'>Active Plan</p>
-            <h2 className='text-xl font-semibold'><Protect plan='premium' fallback='Free' className>
+            <h2 className='text-xl font-semibold text-gray-900 dark:text-dark-text'><Protect plan='premium' fallback='Free' className>
               Premium</Protect></h2>
           </div>
           <div className='w-10 h-10 rounded-lg bg-gradient-to-br from-[#FF61C5] to-[#9E53EE] text-white flex justify-center items-center'>
@@ -75,7 +75,7 @@ const Dashboard = () => {
         ):
         (
         <div className='space-y-3'>
-        <p className='mt-6 mb-4'>Recent Creations</p>
+        <p className='mt-6 mb-4 text-gray-900 dark:text-dark-text'>Recent Creations</p>
         {
           creations.map((item)=><CreationItem key={item.id} item={item}/>)
         }

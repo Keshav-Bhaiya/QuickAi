@@ -44,17 +44,17 @@ const GenerateImages = () => {
 
   return (
     <div className='h-full overscroll-y-scroll p-6 flex items-start flex-wrap gap-4 
-        text-slate-700'>
+        text-slate-700 dark:text-dark-text-secondary bg-[#F4F7FB] dark:bg-dark-bg'>
           {/* left col */}
-          <form onSubmit={onSubmitHandler} className='w-full max-w-lg p-4 bg-white rounded-lg border border-gray-200' action="">
+          <form onSubmit={onSubmitHandler} className='w-full max-w-lg p-4 bg-white dark:bg-dark-card rounded-lg border border-gray-200 dark:border-dark-border' action="">
             <div className='flex items-center gap-3'>
               <Sparkles className='w-6 text-[#00AD25]'/>
-               <h1 className='text-xl font-semibold'>AI Image Generator</h1>
+               <h1 className='text-xl font-semibold text-gray-900 dark:text-dark-text'>AI Image Generator</h1>
             </div>
-            <p className='mt-6 text-sm font-medium'>Describe Your Image</p>
+            <p className='mt-6 text-sm font-medium text-gray-700 dark:text-dark-text-secondary'>Describe Your Image</p>
     
-            <textarea rows={4}  onChange={(e)=>setInput(e.target.value)} placeholder='Describe what you want to see in the image..' className='w-full p-2 px-3 mt-2 outline-none text-sm rounded-md border border-gray-300' required />
-            <p className='mt-4 text-sm font-medium'>Style</p>
+            <textarea rows={4}  onChange={(e)=>setInput(e.target.value)} placeholder='Describe what you want to see in the image..' className='w-full p-2 px-3 mt-2 outline-none text-sm rounded-md border border-gray-300 dark:border-dark-border bg-white dark:bg-dark-surface text-gray-900 dark:text-dark-text placeholder-gray-500 dark:placeholder-dark-text-muted' required />
+            <p className='mt-4 text-sm font-medium text-gray-700 dark:text-dark-text-secondary'>Style</p>
     
             <div className='mt-3 flex gap-3 flex-wrap sm:max-w-9/11'>
               {imageStyle.map((item)=>(
@@ -64,7 +64,7 @@ const GenerateImages = () => {
                   className={`text-xs px-4 py-1 border rounded-full cursor-pointer ${
                     selectedStyle === item
                       ? 'bg-green-50 text-green-700'
-                      : 'text-gray-500 border-gray-300'
+                      : 'text-gray-500 dark:text-dark-text-muted border-gray-300 dark:border-dark-border'
                   }`}
                 >
                   {item}
@@ -82,7 +82,7 @@ const GenerateImages = () => {
                 <div className='w-9 h-5 bg-slate-300 rounded-full transition peer-checked:bg-green-500'></div>
                 <span className='absolute left-1 top-1 w-3 h-3 bg-white rounded-full transition peer-checked:translate-x-4'></span>
               </label>
-              <p className='text-sm'>Make this image Public</p>
+              <p className='text-sm text-gray-700 dark:text-dark-text-secondary'>Make this image Public</p>
             </div>
             <button disabled={loading} className='w-full flex justify-center items-center gap-2 
             bg-gradient-to-r from-[#00AD25] to-[#04FF50] text-white px-4 py-2 mt-6 text-sm rounded-lg cursor-pointer'>
@@ -93,10 +93,10 @@ const GenerateImages = () => {
           </form>
     
           {/* right col */}
-          <div className='w-full max-w-lg p-4 bg-white rounded-lg flex flex-col border border-gray-200 min-h-110 '> 
+          <div className='w-full max-w-lg p-4 bg-white dark:bg-dark-card rounded-lg flex flex-col border border-gray-200 dark:border-dark-border min-h-110 '> 
             <div className='flex items-center gap-3'>
               <Image className='w-5 h-5 text-[#00AD25]'/>
-              <h1 className='text-xl font-semibold'>Generated images</h1>
+              <h1 className='text-xl font-semibold text-gray-900 dark:text-dark-text'>Generated images</h1>
             </div>
 
             {

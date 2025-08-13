@@ -81,11 +81,11 @@ const Community = () => {
   }
 
   return !loading ?(
-    <div className='flex-1 h-full flex-col gap-4 p-6'>
-      <h2 className='text-2xl font-bold mb-4'>Creations</h2>
-      <div className='bg-white rounded-xl h-full w-full overflow-y-scroll'>
+    <div className='flex-1 h-full flex-col gap-4 p-6 bg-[#F4F7FB] dark:bg-dark-bg'>
+      <h2 className='text-2xl font-bold mb-4 text-gray-900 dark:text-dark-text'>Creations</h2>
+      <div className='bg-white dark:bg-dark-card rounded-xl h-full w-full overflow-y-scroll'>
         {creations.length === 0 ? (
-          <div className='flex items-center justify-center h-full text-gray-500'>
+          <div className='flex items-center justify-center h-full text-gray-500 dark:text-dark-text-muted'>
             No creations found
           </div>
         ) : (
@@ -101,7 +101,7 @@ const Community = () => {
               />
 
               <div className='absolute bottom-0 right-0 left-3 flex gap-2 items-end justify-end group-hover:bg-gradient-to-b from-transparent to-black/80 text-white rounded-lg'>
-                <p className='text-sm hidden group-hover:block p-2'>{creation.prompt}</p>
+                <p className='text-sm hidden group-hover:block p-2 text-white'>{creation.prompt}</p>
                 <div className='flex gap-1 items-center p-2'>
                   <p>{creation.likes?.length || 0}</p>
                   <Heart onClick={()=> imageLikeToggle(creation.id)}

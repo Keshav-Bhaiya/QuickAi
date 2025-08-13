@@ -43,8 +43,9 @@ const Testimonial = () => {
 
     return (
         <>
-            <h1 className="text-center text-4xl font-bold text-gray-900">Testimonials</h1>
-            <p className="text-center text-gray-500 mt-1">
+            <div className="bg-white dark:bg-dark-bg py-16">
+            <h1 className="text-center text-4xl font-bold text-gray-900 dark:text-dark-text">Testimonials</h1>
+            <p className="text-center text-gray-500 dark:text-dark-text-secondary mt-1">
                 We have collected some testimonials from our users. They are real people who have used our product.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-6 py-16">
@@ -52,7 +53,7 @@ const Testimonial = () => {
                     <div key={index} ref={(el) => (cardRefs.current[index] = el)}
                         onMouseMove={(e) => handleMouseMove(e, index)}
                         onMouseLeave={handleMouseLeave}
-                        className="relative border border-gray-200 rounded-lg overflow-hidden max-w-sm hover:shadow-lg transition-shadow duration-300"
+                        className="relative border border-gray-200 dark:border-dark-border bg-white dark:bg-dark-card rounded-lg overflow-hidden max-w-sm hover:shadow-lg transition-shadow duration-300"
                     >
                         {tooltip.visible && tooltip.text === testimonial.name && (
                             <span className="absolute px-2.5 py-1 text-sm rounded text-nowrap bg-indigo-500 text-white pointer-events-none transition-all duration-300"
@@ -62,8 +63,8 @@ const Testimonial = () => {
                         )}
 
                         <div className="flex flex-col items-center justify-center p-8 text-center">
-                            <div className="mb-4 text-gray-500">
-                                <h3 className="text-lg font-semibold text-gray-900">Very easy to integrate</h3>
+                            <div className="mb-4 text-gray-500 dark:text-dark-text-secondary">
+                                <h3 className="text-lg font-semibold text-gray-900 dark:text-dark-text">Very easy to integrate</h3>
                                 <p className="my-4 text-sm line-clamp-3">{testimonial.message}</p>
                             </div>
                             <div className="flex items-center justify-center">
@@ -72,13 +73,14 @@ const Testimonial = () => {
                                     alt={`${testimonial.name} profile`}
                                 />
                                 <div className="space-y-0.5 font-medium text-left ml-3">
-                                    <p>{testimonial.name}</p>
-                                    <p className="text-sm text-gray-500">{testimonial.title}</p>
+                                    <p className="text-gray-900 dark:text-dark-text">{testimonial.name}</p>
+                                    <p className="text-sm text-gray-500 dark:text-dark-text-muted">{testimonial.title}</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 ))}
+            </div>
             </div>
         </>
     );

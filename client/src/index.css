@@ -7,15 +7,6 @@
 
 @theme{
   --color-primary: #5044E5;
-  
-  /* Dark mode color variables */
-  --color-dark-bg: #0f0f23;
-  --color-dark-surface: #1a1a2e;
-  --color-dark-card: #16213e;
-  --color-dark-border: #2a2a3e;
-  --color-dark-text: #e2e8f0;
-  --color-dark-text-secondary: #94a3b8;
-  --color-dark-text-muted: #64748b;
 }
 
 .reset-tw, .reset-tw *{
@@ -26,25 +17,3 @@
   z-index: 10;
 }
 
-/* Dark mode styles */
-.dark {
-  color-scheme: dark;
-}
-
-/* Custom scrollbar for dark mode */
-.dark ::-webkit-scrollbar {
-  width: 8px;
-}
-
-.dark ::-webkit-scrollbar-track {
-  background: #1a1a2e;
-}
-
-.dark ::-webkit-scrollbar-thumb {
-  background: #2a2a3e;
-  border-radius: 4px;
-}
-
-.dark ::-webkit-scrollbar-thumb:hover {
-  background: #3a3a4e;
-}
